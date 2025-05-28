@@ -424,6 +424,7 @@ input:checked + .slider:before {
     position: relative;
     display: inline-block;
     width: 100%;
+    transform: translateY(-10px);
 }
 
 .section-title::after {
@@ -489,7 +490,7 @@ body.light-mode .about {
 
 .about h1 span {
     display: inline-block;
-    animation: float 3s ease-in-out infinite;
+    /* animation: float 3s ease-in-out infinite; */
 }
 
 .about p {
@@ -642,6 +643,10 @@ body.light-mode .social-links a:hover {
     .btn {
         padding: 0.7rem 1.5rem;
         font-size: 0.9rem;
+        margin: 0.5rem 0; /* Add margin to create gap between buttons */
+    }
+    .btn-outline {
+        margin-left: 0; /* Override the default margin-left for mobile */
     }
 }
 
@@ -793,15 +798,19 @@ body.light-mode .timeline-item p {
     }
     .timeline-item {
         width: 100%;
-        padding-left: 70px;
-        padding-right: 0;
+        padding-left: 60px; /* Reduced padding to prevent clipping */
+        padding-right: 20px;
     }
     .timeline-item:nth-child(even) {
         left: 0;
+        text-align: left;
     }
     .timeline-item::before {
         left: 10px;
         right: auto;
+    }
+    .timeline-item .content {
+        padding: 1.5rem;
     }
 }
 
@@ -835,6 +844,7 @@ body.light-mode .experience {
     gap: 2rem;
     position: relative;
     z-index: 1;
+    padding: 0 10px; /* Add padding to prevent clipping */
 }
 
 .exp-item {
@@ -911,6 +921,17 @@ body.light-mode .exp-item .skill {
     background: rgba(249, 115, 22, 0.05);
     color: #ea580c;
     border-color: rgba(249, 115, 22, 0.2);
+}
+
+@media (max-width: 768px) {
+    .exp-grid {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        padding: 0 5px; /* Reduced padding for mobile */
+    }
+    .exp-item {
+        padding: 1.5rem;
+        width: 100%; /* Ensure full width */
+    }
 }
 
 .skills-section {
