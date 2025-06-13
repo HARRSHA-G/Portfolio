@@ -96,11 +96,88 @@ function animateOnScroll() {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
-// Initialize AOS
+// Initialize AOS with enhanced configuration
 AOS.init({
     duration: 800,
     easing: 'ease-in-out',
-    once: true
+    once: false,
+    mirror: true,
+    offset: 50,
+    delay: 100,
+    anchorPlacement: 'top-bottom'
+});
+
+// Add scroll-triggered animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate elements on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
+            
+            if (isVisible) {
+                element.classList.add('animate');
+            }
+        });
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Initial check
+
+    // Add hover animations to skill cards
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px) scale(1.05)';
+            card.style.boxShadow = '0 15px 30px rgba(249, 115, 22, 0.3)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1)';
+            card.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+        });
+    });
+
+    // Add typing animation to headings
+    const headings = document.querySelectorAll('.section-title');
+    headings.forEach(heading => {
+        const text = heading.textContent;
+        heading.textContent = '';
+        let i = 0;
+        
+        const typeWriter = () => {
+            if (i < text.length) {
+                heading.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        // Start typing animation when element is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    typeWriter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        observer.observe(heading);
+    });
+
+    // Add parallax effect to background elements
+    const parallaxElements = document.querySelectorAll('.parallax');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed || 0.5;
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
 });
 
 // Smooth scrolling for anchor links
@@ -251,4 +328,137 @@ particlesJS('particles-js', {
         }
     },
     "retina_detect": true
+});
+
+// Horizontal scroll logic for Projects and Achievements
+function setupInfiniteCarousel(gridId, leftBtnId, rightBtnId, visibleCards = 3, autoScroll = true) {
+    const grid = document.getElementById(gridId);
+    const leftBtn = document.getElementById(leftBtnId);
+    const rightBtn = document.getElementById(rightBtnId);
+    let cards = Array.from(grid.children);
+    let cardIndex = 0;
+    let interval;
+
+    // Clone first and last few cards for infinite effect
+    function cloneCards() {
+        // Remove previous clones
+        Array.from(grid.querySelectorAll('.clone')).forEach(el => el.remove());
+        // Clone last N cards to the front
+        for (let i = cards.length - visibleCards; i < cards.length; i++) {
+            let clone = cards[i].cloneNode(true);
+            clone.classList.add('clone');
+            grid.insertBefore(clone, grid.firstChild);
+        }
+        // Clone first N cards to the end
+        for (let i = 0; i < visibleCards; i++) {
+            let clone = cards[i].cloneNode(true);
+            clone.classList.add('clone');
+            grid.appendChild(clone);
+        }
+    }
+
+    function getCardWidth() {
+        const card = grid.children[visibleCards]; // first real card
+        return card.offsetWidth + parseInt(getComputedStyle(grid).gap) || 0;
+    }
+
+    function setInitialPosition() {
+        grid.style.transition = 'none';
+        grid.style.transform = `translateX(-${getCardWidth() * visibleCards}px)`;
+        setTimeout(() => grid.style.transition = '', 20);
+    }
+
+    function scrollToCard(index) {
+        grid.style.transition = '';
+        grid.style.transform = `translateX(-${getCardWidth() * (index + visibleCards)}px)`;
+    }
+
+    function nextCard() {
+        cardIndex++;
+        scrollToCard(cardIndex);
+        if (cardIndex === cards.length) {
+            setTimeout(() => {
+                grid.style.transition = 'none';
+                cardIndex = 0;
+                grid.style.transform = `translateX(-${getCardWidth() * visibleCards}px)`;
+            }, 400);
+        }
+    }
+
+    function prevCard() {
+        cardIndex--;
+        scrollToCard(cardIndex);
+        if (cardIndex < 0) {
+            setTimeout(() => {
+                grid.style.transition = 'none';
+                cardIndex = cards.length - 1;
+                grid.style.transform = `translateX(-${getCardWidth() * (cardIndex + visibleCards)}px)`;
+            }, 400);
+        }
+    }
+
+    function resetInterval() {
+        if (interval) clearInterval(interval);
+        if (autoScroll) interval = setInterval(nextCard, 5000);
+    }
+
+    rightBtn.addEventListener('click', () => { nextCard(); resetInterval(); });
+    leftBtn.addEventListener('click', () => { prevCard(); resetInterval(); });
+
+    window.addEventListener('resize', () => { setInitialPosition(); });
+
+    // Setup
+    cloneCards();
+    setInitialPosition();
+    resetInterval();
+
+    // Pause on hover
+    grid.addEventListener('mouseenter', () => clearInterval(interval));
+    grid.addEventListener('mouseleave', resetInterval);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setupInfiniteCarousel('projects-grid', 'projects-left', 'projects-right', 3, true);
+    setupInfiniteCarousel('achievements-grid', 'achievements-left', 'achievements-right', 3, true);
+});
+
+// Contact form submission handling with Web3Forms
+const contactForm = document.getElementById('contactForm');
+
+// Handle form submission
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+    const formData = new FormData(contactForm); // Collect form data
+
+    // Send form data to Web3Forms API
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        // Check if response is OK (status 200-299)
+        if (!response.ok) {
+            throw new Error(`Nice To See You Here !`);
+        }
+        return response.json(); // Parse JSON response
+    })
+    .then(data => {
+        console.log('Response Data:', data); // Log full response for debugging
+        // Check if submission was successful (Web3Forms returns success: true)
+        if (data.success) {
+            alert('Message sent successfully!'); // Show success message
+            contactForm.reset(); // Clear form fields
+            location.reload(); // Refresh the page after clicking OK
+        } else {
+            alert('Form submission failed: ' + (data.message || 'Unknown error')); // Show error with details
+            contactForm.reset();
+            location.reload(); // Refresh the page after clicking OK
+        }
+    })
+    .catch(error => {
+        console.error('Fetch Error:', error); // Log detailed error to console
+        alert('Thank You  Nice To See You Here!'); // Show generic error message
+        contactForm.reset();
+        location.reload(); // Refresh the page after clicking OK
+    });
 });

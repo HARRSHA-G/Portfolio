@@ -37,17 +37,65 @@
         }
         return gk_fileData[filename] || "";
         }
-        </script><!DOCTYPE html>
+        </script>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
     <title>Harsha Vardhan Gadde | Portfolio</title>
-    <link rel="stylesheet" href="p-2.css">
+    <meta name="title" content="Harsha Vardhan Gadde | Portfolio">
+    <meta name="description" content="Full Stack Developer specializing in Python, Django, JavaScript, and Cloud technologies. View my projects, skills, and experience in web development.">
+    <meta name="keywords" content="Harsha Vardhan Gadde, Full Stack Developer, Python Developer, Django Developer, JavaScript Developer, Web Developer, Portfolio, Projects, Skills, Experience, Cloud Developer, India">
+    <meta name="author" content="Harsha Vardhan Gadde">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="generator" content="HTML5">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="msapplication-navbutton-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://harshavardhangadde.github.io/portfolio/">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="VERSION-3.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316',
+                        secondary: '#f59e0b',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'orbitron': ['Orbitron', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -118,10 +166,10 @@
     </div>
 
     <!-- About Section -->
-    <section id="about" class="section about">
-        <h2 class="section-title">About Me</h2>
+    <section id="about" class="section about" data-aos="fade-up">
+        <h2 class="section-title" data-aos="zoom-in">About Me</h2>
         <div class="content">
-            <div class="text">
+            <div class="text" data-aos="fade-right" data-aos-delay="100">
                 <h1>Hi, I'm <span>Harsha Vardhan Gadde</span></h1>
                 <p>I am eager to join as a Full Stack Developer, using my skills in Python, Django, JavaScript, and cloud technologies to build impactful web solutions. I am committed to solving real-world problems and contributing to innovative projects with dedication and teamwork.</p>
                 <div class="buttons">
@@ -131,9 +179,13 @@
                 <div class="social-links">
                     <a href="https://github.com/HARRSHA-G" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">GitHub</span></a>
                     <a href="https://linkedin.com/in/gaddeharshav" class="tooltip"><i class="fab fa-linkedin"></i><span class="tooltiptext">LinkedIn</span></a>
+                    <a href="https://www.figma.com/@harshavardhangadde" target="_blank" class="tooltip"><i class="fab fa-figma"></i><span class="tooltiptext">Figma</span></a>
+                    <a href="mailto:gaddeharshav@gmail.com" class="tooltip"><i class="fas fa-envelope"></i><span class="tooltiptext">Email</span></a>
+                    <a href="https://drive.google.com/file/d/1J2lPLnA3JQnycdCLCbBXqc7XdCMjGj1f/view?usp=drive_link" target="_blank" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Resume</span></a>
                 </div>
+                
             </div>
-            <div class="photo">
+            <div class="photo" data-aos="fade-left" data-aos-delay="300">
                 <img src="./Goodboy.png" alt="Harsha Vardhan Gadde">
             </div>
         </div>
@@ -171,93 +223,225 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section experience">
-        <h2 class="section-title">Experience</h2>
+    <section id="experience" class="section experience" data-aos="fade-up">
+        <h2 class="section-title" data-aos="zoom-in">Experience</h2>
         <div class="exp-grid">
-            <div class="exp-item">
+            <div class="exp-item" data-aos="fade-right" data-aos-delay="100">
                 <h3>Full Stack Development Intern</h3>
-                <div class="company">Silicon Support Solutions - Bangalore, India | 2025 – Present</div>
-                <p>Contributed in a 4-person team, rotating weekly across 4 projects. Enhanced temple management and WFH tracker apps through design and coding.</p>
+                <div class="company">Silicon Support Solutions - Bangalore, India | 2025 (3 Months)</div>
+                <p>Working on full-stack development projects using Python, Django, and JavaScript. Implementing RESTful APIs and developing responsive web applications.</p>
                 <div class="skills">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Bootstrap</span>
                     <span class="skill">Python</span>
                     <span class="skill">Django</span>
+                    <span class="skill">Figma</span>
                     <span class="skill">MySQL</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">HTML</span>
-                    <span class="skill">CSS</span>
                 </div>
             </div>
-            <div class="exp-item">
+            <div class="exp-item" data-aos="fade-left" data-aos-delay="200">
                 <h3>Web Development Intern</h3>
                 <div class="company">Lineysha and Thevan Software Technologies - Vijayawada, India | 2024 (3 Months)</div>
-                <p>Worked for 3 months onsite, redesigning a company website. Enhanced UI with responsive design and dynamic content management.</p>
+                <p>Developed and maintained web applications using modern technologies. Collaborated with team members to deliver high-quality solutions.</p>
                 <div class="skills">
                     <span class="skill">HTML</span>
                     <span class="skill">CSS</span>
                     <span class="skill">JavaScript</span>
-                    <span class="skill">Python</span>
                     <span class="skill">Bootstrap</span>
                 </div>
             </div>
-            <div class="exp-item">
+            <div class="exp-item" data-aos="fade-right" data-aos-delay="300">
                 <h3>Cloud Computing Intern</h3>
                 <div class="company">AICTE-Eduskills - Virtual | 2024 (10 Weeks)</div>
-                <p>Completed a 10-week virtual internship focused on cloud solutions. Applied problem-solving to optimize cloud-based application performance.</p>
+                <p>Learned and implemented cloud computing concepts using AWS services. Developed and deployed applications on cloud platforms.</p>
                 <div class="skills">
-                    <span class="skill">AWS Services</span>
+                    <span class="skill">AWS</span>
+                    <span class="skill">Cloud Computing</span>
+                    <span class="skill">DevOps</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="exp-grid">
-            <div class="exp-item">
-                <h3>Temple Management System</h3>
-                <div class="company">2025 – Present</div>
-                <p>Designed a system to track temple finances and inventory in real-time. Developed reporting tools in a team with weekly role rotation.</p>
-                <div class="skills">
-                    <span class="skill">Python</span>
-                    <span class="skill">Django</span>
-                    <span class="skill">MySQL</span>
-                    <span class="skill">HTML</span>
-                    <span class="skill">CSS</span>
-                    <span class="skill">JavaScript</span>
+    <section id="projects" class="section projects" data-aos="fade-up">
+        <h2 class="section-title" data-aos="zoom-in">Projects</h2>
+        <div class="projects-container">
+            <button class="scroll-arrow left-arrow" id="projects-left"><i class="fas fa-chevron-left"></i></button>
+            <div class="projects-grid" id="projects-grid">
+
+
+                <!-- Portfolio Project -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Portfolio</h3>
+                    <div class="company">Personal</div>
+                    <p>Built a responsive portfolio website to showcase projects and skills. Integrated contact form and animations for better user experience.</p>
+                    <div class="skills">
+                        <span class="skill">HTML</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Bootstrap</span>
+                        <span class="skill">Figma</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/HARRSHA-G/Portfolio" target="_blank" class="project-link" title="View on GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="exp-item">
-                <h3>Company Website Redesign</h3>
-                <div class="company">2024 (3 Months)</div>
-                <p>Redesign and developed outdated website into a modern, responsive design. Improved user engagement with dynamic visualizations.</p>
-                <div class="skills">
-                    <span class="skill">HTML</span>
-                    <span class="skill">CSS</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">Bootstrap</span>
+
+                <!-- Hospital Emergency Dashboard -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Hospital Emergency Dashboard</h3>
+                    <div class="company">Client : Krishna Kishore</div>
+                    <p>Developed a real-time dashboard for hospital emergency management. Implemented data visualization and monitoring features.</p>
+                    <div class="skills">
+                        <span class="skill">PowerBI</span>
+                        <span class="skill">SQL</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/HARRSHA-G/Hospital_Dashboard_Power_BI" target="_blank" class="project-link" title="View on GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    </div>
                 </div>
-            </div>
-            <div class="exp-item">
-                <h3>Personal Portfolio</h3>
-                <div class="company">2024 (10 Weeks)</div>
-                <p>Built a responsive website to showcase projects and skills. Integrated a contact form and animations for usability.</p>
-                <div class="skills">
-                    <span class="skill">Figma</span>
-                    <span class="skill">HTML</span>
-                    <span class="skill">CSS</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">Bootstrap</span>
+
+                <!-- E-Commerce Sales Dashboard -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <h3>E-Commerce Sales Dashboard</h3>
+                    <div class="company">Client : Kaggle dataset (Self)</div>
+                    <p>Created an interactive dashboard for e-commerce sales analysis. Implemented data filtering and visualization features.</p>
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">Pandas</span>
+                        <span class="skill">Matplotlib</span>
+                        <span class="skill">Seaborn</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/HARRSHA-G/Sales_Dashboard_Power_bi" target="_blank" class="project-link" title="View on GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    </div>
                 </div>
+                <!-- Temple Inventory Management System -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>Temple Inventory Management System</h3>
+                    <div class="company">Client : Manjunath </div>
+                    <p>Developed a comprehensive inventory management system for temple assets. Implemented user authentication and reporting features.</p>
+                    <div class="skills">
+                        <span class="skill">HTML</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Django</span>
+                        <span class="skill">MySQL</span>
+                        <span class="skill">Bootstrap</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://gitlab.com/test9024529/temple-inventory-management/-/tree/temple_mgmt_harsha" target="_blank" class="project-link" title="View on GitLab">
+                        <i class="fab fa-gitlab"></i> GitLab
+                    </a>
+                    </div>
+                </div>
+                <!-- Construction Management System -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
+                    <h3>Construction Management System</h3>
+                    <div class="company">Client : S.S.S</div>
+                    <p>Built a system for managing construction projects, materials, and resources. Implemented project tracking and reporting features.</p>
+                    <div class="skills">
+                        <span class="skill">Html</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Django</span>
+                        <span class="skill">MySQL</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/HARRSHA-G/Construction-Management-System" target="_blank" class="project-link" title="View on GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    </div>
+                </div>
+                <!-- Work From Home Tracker -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="600">
+                    <h3>Work From Home Tracker</h3>
+                    <div class="company">Client : Aklish </div>
+                    <p>Developed a tracking system for remote work management. Implemented attendance and productivity monitoring features.</p>
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">Django</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Bootstrap</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/HARRSHA-G/Work_From_Home_Tracker" target="_blank" class="project-link" title="View on GitHub">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    </div>
+                </div>
+                <!-- YOLO-based Fruit Detection -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="700">
+                    <h3>YOLO-based Fruit Detection</h3>
+                    <div class="company">College</div>
+                    <p>Implemented a real-time fruit detection system using YOLO algorithm. Achieved high accuracy in fruit classification.</p>
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">OpenCV</span>
+                        <span class="skill">YOLO</span>
+                        <span class="skill">TensorFlow</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="#" target="_blank" class="project-link" title="View on GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <!-- Hospital Appointment Booking UI -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="800">
+                    <h3>Hospital Appointment Booking UI</h3>
+                    <div class="company">Client : Kadar Ali</div>
+                    <p>Designed and developed a user-friendly interface for hospital appointment booking. Implemented real-time slot availability.</p>
+                    <div class="skills">
+                        <span class="skill">HTML</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Bootstrap</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://www.figma.com/proto/UoYEG4f1UF32DUQEFoBdAe/p2?node-id=12-2396" target="_blank" class="project-link" title="View on Figma">
+                        <i class="fab fa-figma"></i> Figma
+                    </a>
+                    </div>
+                </div>
+                <!-- Plant Web App UI -->
+                <!-- <div class="project-card" data-aos="zoom-in" data-aos-delay="900">
+                    <h3>Plant Web App UI</h3>
+                    <div class="company">Personal</div>
+                    <p>Created a modern UI for a plant care application. Implemented responsive design and interactive features.</p>
+                    <div class="skills">
+                        <span class="skill">HTML</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">JavaScript</span>
+                        <span class="skill">Figma</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://www.figma.com/proto/OYYgWbZP0he8tt5Pw7lmR8/-P-3---%3E-PLANTS?node-id=9-215" target="_blank" class="project-link" title="View on Figma">
+                        <i class="fab fa-figma"></i> Figma 
+                    </a>
+                    </div>
+                </div> -->
             </div>
+            <button class="scroll-arrow right-arrow" id="projects-right"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-        <h2 class="section-title">Skills</h2>
+    <section id="skills" class="section skills-section" data-aos="fade-up">
+        <h2 class="section-title" data-aos="zoom-in">Skills</h2>
         <div class="skills-grid">
-            <div class="skill-category">
+            <div class="skill-category" data-aos="fade-right" data-aos-delay="100">
                 <h3><i class="fas fa-laptop-code"></i> Languages</h3>
                 <div class="skill-item">
                     <div class="skill-name">
@@ -287,7 +471,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-category">
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
                 <h3><i class="fas fa-server"></i> Frameworks/Tools</h3>
                 <div class="skill-item">
                     <div class="skill-name">
@@ -317,7 +501,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-category">
+            <div class="skill-category" data-aos="fade-left" data-aos-delay="300">
                 <h3><i class="fas fa-database"></i> Databases/Cloud</h3>
                 <div class="skill-item">
                     <div class="skill-name">
@@ -353,45 +537,45 @@
     <!-- Achievements Section -->
     <section id="achievements" class="section achievements">
         <h2 class="section-title">Achievements</h2>
-        <div class="exp-grid">
-            <div class="exp-item">
-                <h3>NSS Service</h3>
-                <div class="company">2022 – 2025</div>
-                <p>Completed 200+ hours of service in NSS and selected for NSS Special Camp.</p>
+        <div class="achievements-container">
+            <button class="scroll-arrow left-arrow" id="achievements-left"><i class="fas fa-chevron-left"></i></button>
+            <div class="achievements-grid" id="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>NSS Service</h3>
+                    <div class="company">2022 – 2025</div>
+                    <p>Completed 250+ hours of social service under NSS and selected for NSS Special Camp.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Shooting Sport</h3>
+                    <div class="company">2020 – 2021</div>
+                    <p>Selected for Nationals in 10m Air Rifle Shooting.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Best Player in Kabaddi</h3>
+                    <div class="company">2018 – 2019</div>
+                    <p>Awarded Best Player of the Year in Kabaddi at school level.</p>
+                </div>
             </div>
-            <div class="exp-item">
-                <h3>National Shooting Selection</h3>
-                <div class="company">2020 – 2021</div>
-                <p>Selected for Nationals in 10m Air Rifle Shooting.</p>
-            </div>
-            <div class="exp-item">
-                <h3>Best Player in Kabaddi</h3>
-                <div class="company">2018 – 2019</div>
-                <p>Awarded Best Player of the Year in Kabaddi at school level.</p>
-            </div>
+            <button class="scroll-arrow right-arrow" id="achievements-right"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <h2 class="section-title">Get In Touch</h2>
+    <section id="contact" class="section contact" data-aos="fade-up">
+        <h2 class="section-title" data-aos="zoom-in">Get In Touch</h2>
         <div class="content">
-            <div class="contact-info">
-                <div class="contact-card">
+            <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+                <div class="contact-card" data-aos="flip-up" data-aos-delay="200">
                     <h3><i class="fas fa-envelope"></i> Email</h3>
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
                         <p>gaddeharshav@gmail.com</p>
                     </div>
                 </div>
-                <!-- <div class="contact-card">
-                    <h3><i class="fas fa-phone"></i> Phone</h3>
-                    <div class="contact-detail">
-                        <i class="fas fa-phone"></i>
-                        <p>+91 9392441826</p>
-                    </div>
-                </div> -->
-                <div class="contact-card">
+                <div class="contact-card" data-aos="flip-up" data-aos-delay="300">
                     <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
@@ -399,33 +583,35 @@
                     </div>
                 </div>
             </div>
-            <div class="contact-form">
+            <div class="contact-form" data-aos="fade-left" data-aos-delay="400">
                 <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
                     <input type="hidden" name="access_key" value="a9270a16-90d9-407a-a9a5-211642400405">
                     <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                    <div class="form-group">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="500">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="600">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" data-aos="fade-up" data-aos-delay="700">
                         <label for="message">Message</label>
                         <textarea name="message" id="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" class="btn" data-aos="zoom-in" data-aos-delay="800">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
+    
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer class="footer">
         <div class="content">
             <a href="#" class="logo">GHV</a>
             <p>Building digital experiences that matter. Let's create something amazing together.</p>
+            <p style="color: #f97316;font-size: 1.2rem;font-family: 'Orbitron', sans-serif;" >Quick Links</p>
             <div class="footer-links">
                 <a href="#about">About</a>
                 <a href="#education">Education</a>
@@ -435,15 +621,20 @@
                 <a href="#achievements">Achievements</a>
                 <a href="#contact">Contact</a>
             </div>
+            <p style="color: #f97316;font-size: 1.2rem;font-family: 'Orbitron', sans-serif;">connect with me</p>
             <div class="footer-social">
-                <a href="https://github.com/HARRSHA-G"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/gaddeharshav"><i class="fab fa-linkedin"></i></a>
-            </div>
+                        <a href="https://github.com/HARRSHA-G" target="_blank" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">GitHub</span></a>
+                        <a href="https://linkedin.com/in/gaddeharshav" target="_blank" class="tooltip"><i class="fab fa-linkedin"></i><span class="tooltiptext">LinkedIn</span></a>
+                        <a href="https://www.figma.com/@harshavardhangadde" target="_blank" class="tooltip"><i class="fab fa-figma"></i><span class="tooltiptext">Figma</span></a>
+                        <a href="mailto:gaddeharshav@gmail.com" class="tooltip"><i class="fas fa-envelope"></i><span class="tooltiptext">Email</span></a>
+                        <a href="https://drive.google.com/file/d/1J2lPLnA3JQnycdCLCbBXqc7XdCMjGj1f/view?usp=drive_link" target="_blank" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Resume</span></a>
+                    </div>
             <div class="copyright">
                 © 2025 Harsha Vardhan Gadde. All rights reserved.
             </div>
         </div>
     </footer>
+
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
