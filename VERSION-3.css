@@ -1,4 +1,4 @@
-/* Glassy Card Upgrade */
+
 .project-card, .achievement-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
     border-radius: 18px;
@@ -10,7 +10,20 @@
     overflow: hidden;
     transition: box-shadow 0.4s, transform 0.4s;
 }
+.project-card .skill, .achievement-card .skill {
+    background: #f9731622;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
 
+body.light-mode .project-card .skill, body.light-mode .achievement-card .skill {
+    background: #ea580c;
+    color: #1e293b; /* Changed to a dark color for visibility in light mode */
+    box-shadow: 0 2px 8px #ea580c22;
+}
 .project-card::before, .achievement-card::before {
     content: '';
     position: absolute;
@@ -113,6 +126,10 @@
     height: 24px;
     position: relative;
 }
+.theme-switch:hover{
+  box-shadow: 0 0 15px 4px rgba(255, 215, 0, 0.6);
+  border-radius: 24px;
+}
 
 .theme-switch input {
     display: none;
@@ -131,11 +148,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 5px;
+    border: 3px groove #FFD700;
     transition: background 0.3s;
+    background: radial-gradient(circle, #333333 0%, #4A4A4A 100%); /* Dark base to contrast gold */
 }
 
 .theme-toggle-btn::before {
-    content: '☀️';
+    content: '🌦️️';
     position: absolute;
     left: 5px;
     font-size: 16px;
@@ -371,6 +390,7 @@ body.light-mode .navbar .nav-links a {
 
 .hamburger:hover {
     transform: rotate(90deg);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
 }
 
 body.light-mode .hamburger {
@@ -1000,7 +1020,7 @@ body.light-mode .exp-item {
 }
 
 .exp-item p {
-    color: #94a3b8;
+    color: #fff;
     margin-bottom: 1rem;
     line-height: 1.7;
 }
@@ -1402,7 +1422,7 @@ body.light-mode .footer-social a:hover {
     color: #f97316;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    
+
     font-family: 'Orbitron', sans-serif;
 }
 .footer-bottom {
@@ -1624,6 +1644,147 @@ body.light-mode .tooltip .tooltiptext::after {
     }
 }
 
+/* Achievements and Projects Cards */
+.project-card, .achievement-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 18px;
+    border: 2px solid #f97316;
+    box-shadow: 0 8px 32px rgba(74,144,226,0.13), 0 1.5px 8px rgba(0,0,0,0.10);
+    padding: 2.5rem 2rem 2rem 2rem;
+    margin: 0 0.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.4s, transform 0.4s;
+}
+
+body.light-mode .project-card, body.light-mode .achievement-card {
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.2), rgba(248, 250, 252, 0.1));
+    border-color: #ea580c;
+    box-shadow: 0 8px 32px rgba(234, 88, 12, 0.13), 0 1.5px 8px rgba(0,0,0,0.05);
+}
+
+.project-card::before, .achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: #f97316;
+    border-radius: 18px 18px 0 0;
+    opacity: 0.8;
+}
+
+body.light-mode .project-card::before, body.light-mode .achievement-card::before {
+    background: #ea580c;
+}
+
+.project-card:hover, .achievement-card:hover {
+    box-shadow: 0 16px 40px #f9731633, 0 4px 16px #4a90e233;
+    transform: translateY(-8px) scale(1.03);
+}
+
+body.light-mode .project-card:hover, body.light-mode .achievement-card:hover {
+    box-shadow: 0 16px 40px #ea580c33, 0 4px 16px #4a90e233;
+}
+
+.project-card h3, .achievement-card h3 {
+    color: #f97316;
+    font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+}
+
+body.light-mode .project-card h3, body.light-mode .achievement-card h3 {
+    color: #ea580c;
+}
+
+.project-card .company, .achievement-card .company {
+    color: #9b4e00;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+body.light-mode .project-card .company, body.light-mode .achievement-card .company {
+    color: #c05621;
+}
+
+.project-card p, .achievement-card p {
+    color: #334155;
+    font-size: 1.08rem;
+    margin-bottom: 1.2rem;
+}
+
+body.light-mode .project-card p, body.light-mode .achievement-card p {
+    color: #475569;
+}
+
+.project-card .skills, .achievement-card .skills {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-card .skill, .achievement-card .skill {
+    background: #f97316;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #f9731622;
+    border: none;
+}
+
+body.light-mode .project-card .skill, body.light-mode .achievement-card .skill {
+    background: #ea580c;
+    box-shadow: 0 2px 8px #ea580c22;
+}
+
+.project-link {
+    display: inline-block;
+    background: #f97316;
+    color: #fff !important;
+    border-radius: 20px;
+    padding: 0.4rem 1.2rem;
+    margin: 0.5rem 0.5rem 0 0;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none !important;
+    box-shadow: 0 2px 8px #f9731622;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    border: none;
+}
+
+body.light-mode .project-link {
+    background: #ea580c;
+    box-shadow: 0 2px 8px #ea580c22;
+}
+
+.project-link:hover {
+    background: #f97316;
+    color: #fff !important;
+    box-shadow: 0 4px 16px #4a90e233;
+}
+
+body.light-mode .project-link:hover {
+    background: #ea580c;
+    box-shadow: 0 4px 16px #4a90e233;
+}
+
+/* Existing media queries remain unchanged */
+@media (max-width: 1024px) {
+    .project-card, .achievement-card {
+        flex: 0 0 calc(50% - 2.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card, .achievement-card {
+        flex: 0 0 calc(100% - 2.5rem);
+    }
+}
 .projects-container, .achievements-container {
     position: relative;
     overflow: hidden;
@@ -1687,7 +1848,7 @@ body.light-mode .tooltip .tooltiptext::after {
 
 .project-card .skill, .achievement-card .skill {
     background: #f9731622;
-    color: #f97316;
+    color: #fff;
     border-radius: 12px;
     padding: 0.2rem 0.7rem;
     font-size: 0.85rem;

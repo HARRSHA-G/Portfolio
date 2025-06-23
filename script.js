@@ -1,3 +1,4 @@
+
 // Loading screen
 window.addEventListener('load', function() {
     setTimeout(function() {
@@ -82,11 +83,11 @@ backToTopButton.addEventListener('click', function(e) {
 // Scroll reveal animation
 function animateOnScroll() {
     const elements = document.querySelectorAll('.timeline-item, .exp-item, .skill-category');
-    
+
     elements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
         const screenPosition = window.innerHeight / 1.3;
-        
+
         if (elementPosition < screenPosition) {
             element.classList.add('visible');
         }
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const elementTop = element.getBoundingClientRect().top;
             const elementBottom = element.getBoundingClientRect().bottom;
             const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
-            
+
             if (isVisible) {
                 element.classList.add('animate');
             }
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.transform = 'translateY(-10px) scale(1.05)';
             card.style.boxShadow = '0 15px 30px rgba(249, 115, 22, 0.3)';
         });
-        
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0) scale(1)';
             card.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
@@ -147,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const text = heading.textContent;
         heading.textContent = '';
         let i = 0;
-        
+
         const typeWriter = () => {
             if (i < text.length) {
                 heading.textContent += text.charAt(i);
@@ -155,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(typeWriter, 100);
             }
         };
-        
+
         // Start typing animation when element is in view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -165,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
+
         observer.observe(heading);
     });
 
@@ -184,10 +185,10 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
             window.scrollTo({
                 top: targetElement.offsetTop - 80,
@@ -200,11 +201,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Animate skill bars on scroll
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
-    
+
     skillBars.forEach(bar => {
         const width = bar.style.width;
         bar.style.width = '0';
-        
+
         setTimeout(() => {
             bar.style.width = width;
         }, 100);
